@@ -34,16 +34,19 @@ func writeFile(v interface{}) {
 	var data []byte
 	var err error
 
+	// Check if we want pretty print
 	if pretty {
 		data, err = json.MarshalIndent(v, "", "\t")
 	} else {
 		data, err = json.Marshal(v)
 	}
 
+	// Look for errors
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	// Write file
 	err = ioutil.WriteFile(outputFile, data, 0644)
 	if err != nil {
 		log.Fatal(err)
@@ -59,6 +62,7 @@ func main() {
 		)
 	}
 
+	// Declare some variables
 	var (
 		offset  int32
 		docSize int32
@@ -108,6 +112,7 @@ func main() {
 
 		// Copy N size from reader to buffer
 		if _, err := io.CopyN(buffer, reader, int64(docSize-4)); err != nil {
+			// Panic at the Disco
 			panic(err)
 		}
 
@@ -116,6 +121,7 @@ func main() {
 
 		// Unmarshal bytes to an interface
 		if err := bson.Unmarshal(buffer.Bytes(), &document); err != nil {
+			// P for panic
 			panic(err)
 		}
 
