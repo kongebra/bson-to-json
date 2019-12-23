@@ -24,8 +24,8 @@ var (
 func init() {
 	flag.StringVar(&sourceFile, "s", "", "source file (BSON)")
 	flag.StringVar(&outputFile, "o", "output.json", "output file (JSON)")
-	flag.BoolVar(&pretty, "p", false, "pretty output (indented)")
-	flag.BoolVar(&debug, "d", false, "get debug output")
+	flag.BoolVar(&pretty, "p", false, "pretty output")
+	flag.BoolVar(&debug, "d", false, "debug mode")
 
 	flag.Parse()
 }

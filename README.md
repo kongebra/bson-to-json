@@ -10,21 +10,15 @@ A simple CLI for converting a BSON-file to a JSON-file
 
 ```
 Usage of bson-to-json
-  -c    Check and validate BSON during processing (default: false) (shorthand)
-  -check
-        Check and validate BSON during processing (default: false)
-  -d    debug
-  -debug
-        debug
-  -i string
-        (Required) Input file (shorthand)
-  -input string
-        (Required) Input file
+  -d    debug mode
   -o string
-        Output file default: 'data.json') (shorthand) (default "data.json")
-  -output string
-        Output file default: 'data.json') (default "data.json")
-  -p    Pretty output (default: false) (shorthand)
-  -pretty
-        Pretty output (default: false)
+        output file (JSON) (default "output.json")
+  -p    pretty output
+  -s string
+        source file (BSON)
+```
+
+### Example
+```
+./bson-to-json -d -p -s /path/to/source.bson -o /path/to/output.json
 ```
