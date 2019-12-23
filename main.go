@@ -22,10 +22,10 @@ var (
 )
 
 func init() {
-	flag.StringVar(&sourceFile, "source", "", "source file (BSON)")
-	flag.StringVar(&outputFile, "output", "output.json", "output file (JSON)")
-	flag.BoolVar(&pretty, "pretty", false, "pretty output (indented)")
-	flag.BoolVar(&debug, "debug", false, "get debug output")
+	flag.StringVar(&sourceFile, "s", "", "source file (BSON)")
+	flag.StringVar(&outputFile, "o", "output.json", "output file (JSON)")
+	flag.BoolVar(&pretty, "p", false, "pretty output (indented)")
+	flag.BoolVar(&debug, "d", false, "get debug output")
 
 	flag.Parse()
 }
